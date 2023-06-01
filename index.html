@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        .calculator {
+            width: 250px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0 auto;
+        }
+        .calculator input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        .calculator input[type="button"] {
+            width: 50px;
+            height: 30px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <input type="button" value="1" onclick="appendToResult('1')">
+        <input type="button" value="2" onclick="appendToResult('2')">
+        <input type="button" value="3" onclick="appendToResult('3')">
+        <input type="button" value="+" onclick="appendToResult('+')">
+        <br>
+        <input type="button" value="4" onclick="appendToResult('4')">
+        <input type="button" value="5" onclick="appendToResult('5')">
+        <input type="button" value="6" onclick="appendToResult('6')">
+        <input type="button" value="-" onclick="appendToResult('-')">
+        <br>
+        <input type="button" value="7" onclick="appendToResult('7')">
+        <input type="button" value="8" onclick="appendToResult('8')">
+        <input type="button" value="9" onclick="appendToResult('9')">
+        <input type="button" value="*" onclick="appendToResult('*')">
+        <br>
+        <input type="button" value="0" onclick="appendToResult('0')">
+        <input type="button" value="." onclick="appendToResult('.')">
+        <input type="button" value="=" onclick="calculateResult()">
+        <input type="button" value="/" onclick="appendToResult('/')">
+        <br>
+        <input type="button" value="C" onclick="clearResult()">
+    </div>
+    <script>
+        function appendToResult(value) {
+            document.getElementById('result').value += value;
+        }
+        function calculateResult() {
+            var result = eval(document.getElementById('result').value);
+            document.getElementById('result').value = result;
+        }
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+    </script>
+</body>
+</html>
